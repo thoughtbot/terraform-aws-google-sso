@@ -21,7 +21,7 @@ resource "aws_serverlessapplicationrepository_cloudformation_stack" "this" {
 }
 
 locals {
-  region = coalesce(var.region, data.aws_region.current.name)
+  region = coalesce(var.region, data.aws_region.current.region)
 
   application_id = coalesce(
     var.application_id,
